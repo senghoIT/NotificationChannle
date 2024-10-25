@@ -25,6 +25,7 @@ class Program
                 Console.WriteLine("Input cannot be empty. Please enter a valid message or type exit() for Quit.");
             }
         }
+
         ProcessNotification(input);
     }
 
@@ -45,9 +46,18 @@ class Program
             {
                 channels.Add(tag);
             }
+            
         }
 
-        // Output the result
-        Console.WriteLine($"Receive channels: {string.Join(", ", channels)}");
+        if (channels.Count() > 0)
+        {
+            Console.WriteLine($"Receive channels: {string.Join(", ", channels)}");
+        }
+        else
+        {
+            Console.WriteLine("No channels received notification");
+        }
+
+        
     }
 }
